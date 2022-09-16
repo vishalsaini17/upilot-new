@@ -6,7 +6,7 @@ import body_shadow from '../../assets/bg-img/body_shadow.jpg';
 const ThemeContext = createContext({ toggleColorMode: () => { }, mode: 'light' | 'dark' });
 
 const ThemeConfig = ({ children }) => {
-  const [mode, setMode] = useState('light');
+  const [mode, setMode] = useState('dark');
 
   const theme = useMemo(() => createTheme({
     components: {
