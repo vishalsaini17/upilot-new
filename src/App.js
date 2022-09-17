@@ -1,15 +1,11 @@
-import { Button } from '@mui/material';
-import { useThemeContext } from './configuration';
+import { Box } from '@mui/material';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
-  const { mode, toggleColorMode } = useThemeContext()
   return (
-    <div className="App">
-      {mode}
-      <Button variant="contained" onClick={toggleColorMode}>
-        change mode
-      </Button>
-    </div>
+    <Box className="App">
+      <AppRoutes />
+    </Box>
   );
 }
 
