@@ -10,7 +10,7 @@ const AuthScreenLayout = () => {
           <Grid container justifyContent="center">
             <Grid item xs={12} sm={6} md={5} lg={4} xl={3}>
               <Box sx={{ textAlign: 'center', px: 8 }}>
-                <Box component={`img`} alt="UPilot Logo" src={logo} sx={{ maxWidth: '100%' }} />
+                <Box component={`img`} alt="UPilot Logo" src={logo} sx={{ width: '100%', maxWidth: '150px' }} />
               </Box>
             </Grid>
           </Grid>
