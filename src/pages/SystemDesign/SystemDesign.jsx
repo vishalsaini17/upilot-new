@@ -114,8 +114,8 @@ const SystemDesign = () => {
 
         <Grid item xs={12} >
 
-          <Grid item xs={12}>
-          <Grid item md={6}>   <Grid item><Button variant="contained" color="primary">Add New Contact</Button></Grid></Grid>
+          <Grid sx={{padding:"10px 0"}} item xs={12}>
+          <Grid item md={6}> <Grid item><Button variant="contained" color="primary">Add New Contact</Button></Grid></Grid>
           <Grid item md={6}></Grid>
         
           </Grid>
