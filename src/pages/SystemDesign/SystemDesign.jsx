@@ -1,7 +1,9 @@
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
 import { useThemeContext } from '../../configuration';
+import "./style.css";
 import { columns, rowsData } from "./table.option";
+
 
 
 const SystemDesign = () => {
@@ -111,6 +113,14 @@ const SystemDesign = () => {
         <Grid item xs={12}> <Divider /> </Grid>
 
         <Grid item xs={12} >
+
+          <Grid item xs={12}>
+          <Grid item md={6}>   <Grid item><Button variant="contained" color="primary">Add New Contact</Button></Grid></Grid>
+          <Grid item md={6}></Grid>
+        
+          </Grid>
+          
+       
           <Box sx={{
             height: '400px',
             '& .bg-even': {
