@@ -1,5 +1,8 @@
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
+import { DataGrid } from '@mui/x-data-grid';
 import { useThemeContext } from '../../configuration';
+import { columns, rowsData } from "./table.option";
+
 
 const SystemDesign = () => {
   const { themeMode, toggleColorMode } = useThemeContext()
@@ -22,14 +25,14 @@ const SystemDesign = () => {
         <Grid item><Button variant="outlined" size="small" color="error">error</Button></Grid>
         <Grid item><Button variant="outlined" size="small" color="info">info</Button></Grid>
         <Grid item><Button variant="outlined" size="small" color="warning">warning</Button></Grid>
-        
+
         <Grid item><Button variant="text" size="small" color="primary">Primary</Button></Grid>
         <Grid item><Button variant="text" size="small" color="secondary">secondary</Button></Grid>
         <Grid item><Button variant="text" size="small" color="success">success</Button></Grid>
         <Grid item><Button variant="text" size="small" color="error">error</Button></Grid>
         <Grid item><Button variant="text" size="small" color="info">info</Button></Grid>
         <Grid item><Button variant="text" size="small" color="warning">warning</Button></Grid>
-        
+
         <Grid item xs={12}> <Divider /> </Grid>
         <Grid item><Button variant="contained" color="primary">Primary</Button></Grid>
         <Grid item><Button variant="contained" color="secondary">secondary</Button></Grid>
@@ -51,7 +54,7 @@ const SystemDesign = () => {
         <Grid item><Button variant="text" color="error">error</Button></Grid>
         <Grid item><Button variant="text" color="info">info</Button></Grid>
         <Grid item><Button variant="text" color="warning">warning</Button></Grid>
-        
+
         <Grid item xs={12}> <Divider /> </Grid>
         <Grid item><Button variant="contained" size="large" color="primary">Primary</Button></Grid>
         <Grid item><Button variant="contained" size="large" color="secondary">secondary</Button></Grid>
@@ -101,6 +104,44 @@ const SystemDesign = () => {
           <br />
           <Typography variant="caption">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis, dolorem!</Typography>
         </Grid>
+
+        <Grid item xs={12}> <Divider /> </Grid>
+        <Grid item xs={12}> <Divider /> </Grid>
+        <Grid item xs={12}> <Divider /> </Grid>
+        <Grid item xs={12}> <Divider /> </Grid>
+
+        <Grid item xs={12} >
+          <Box sx={{
+            height: '400px',
+            '& .bg-even': {
+              backgroundColor: 'rgba(225,223,246,0.15)',
+              boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
+              mb: '5px',
+              '&:hover': {
+                backgroundColor: 'rgba(225,223,246,0.34)',
+                boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
+              }
+            },
+
+            '& .bg-odd': {
+              backgroundColor: 'rgba(225,223,246,0.22)',
+              boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
+              mb: '5px',
+              '&:hover': {
+                backgroundColor: 'rgba(225,223,246,0.34)',
+                boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
+              }
+            }
+          }}>
+            <DataGrid columns={columns} rows={rowsData}
+              checkboxSelection
+              getRowClassName={({ indexRelativeToCurrentPage }) => indexRelativeToCurrentPage % 2 === 0 ? `bg-even` : 'bg-odd'}
+            />
+          </Box>
+        </Grid>
+
+        <Grid item xs={12}> <Divider /> </Grid>
+
       </Grid>
     </Box>
   );
