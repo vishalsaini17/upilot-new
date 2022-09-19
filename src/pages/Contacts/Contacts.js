@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { DataTable } from "../../components";
+import { DataTable, TableHeader } from "../../components";
 
 
 
@@ -94,11 +94,12 @@ const rows = [
 
 const Contacts = () => {
   return (
-    <>
+    <Box>
+      <TableHeader />
       <DataTable columns={columns} rows={rows}
-
+      
       />
-    </>
+    </Box>
   );
 }
 
