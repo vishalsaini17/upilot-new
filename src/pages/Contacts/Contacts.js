@@ -1,38 +1,102 @@
+import { Box } from "@mui/material";
 import { DataTable } from "../../components";
 
 
 
-export const columns = [
-
-  { field: 'ContactName', headerName: 'Contact name', width: 300, editable: true },
-  { field: 'Status', headerName: 'Status', width: 130, editable: true },
-  { field: 'Phone', headerName: 'Phone', width: 150, editable: true, },
-  { field: 'Note', headerName: 'Note', width: 130, editable: true },
-  { field: 'LatestTask', headerName: 'Latest task', width: 160, editable: true },
-  { field: 'LatestDeaL', headerName: 'Latest Deal', width: 160, editable: false },
-  { field: 'Date', headerName: 'Date of Creation', width: 160, editable: true },
-  { field: 'PWLValue', headerName: 'P/W/L Value', width: 160, editable: true },
-
+const columns = [
+  {
+    field: 'contactName',
+    headerName: 'Contact Name',
+    renderCell: ({ value }) => {
+      return <Box sx={{ display: 'flex', alignItems: 'center', py: '4px' }}>
+        <Box component={`img`} src={`https://picsum.photos/50/50?grayscale&${value}`} sx={{ display: 'block', width: '35px', height: '35px', borderRadius: '4px', mr: '6px' }} />
+        <Box>{value}</Box>
+      </Box>
+    },
+    width: 180,
+    // description: '',
+    // editable: true,
+    // valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'status',
+    headerName: 'Status',
+    // description: '',
+    // width: 150,
+    // editable: true,
+    // valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'phone',
+    headerName: 'Phone',
+    // description: '',
+    width: 110,
+    // editable: true,
+    // valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'note',
+    headerName: 'Note',
+    // description: '',
+    width: 200,
+    // editable: true,
+    // valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'latestTask',
+    headerName: 'Latest Task',
+    // description: '',
+    // width: 150,
+    // editable: true,
+    // valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'dateOfCreation',
+    headerName: 'Date of Creation',
+    // description: '',
+    width: 150,
+    // editable: true,
+    // valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
+  {
+    field: 'pwlValue',
+    headerName: 'P/W/L Value',
+    // description: '',
+    // width: 150,
+    // editable: true,
+    // valueGetter: (params) => `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+  },
 ];
 
-
-export const rowsData = [
-  { id: "1", ContactName: "ABC Corp", Status: "Open", Date: "30 June 2022", Phone: "null", PWLValue: "." },
-  { id: "2", ContactName: "AbhijitDas gupta", Status: "Open", Date: "20 June 2022", Phone: "null", PWLValue: "." },
-  { id: "3", ContactName: "Guneet Makkar", Status: "Open", Date: "10 June 2022", Phone: "null", PWLValue: "." },
-  { id: "4", ContactName: "John Smith", Status: "Open", Date: "23 June 2022", Phone: "null", PWLValue: "." },
-  { id: "5", ContactName: "San Bhaskaran", Status: "Open", Date: "25 June 2022", Phone: "null", PWLValue: "." },
-  { id: "6", ContactName: "Shelina Kyle", Status: "Open", Date: "4 June 2022", Phone: "null", PWLValue: "." },
-  { id: "7", ContactName: "Shibhu p", Status: "Open", Phone: "9867543467", Date: "22 June 2022", Value: "$25000/-", LatestDeaL: "Second Deal", PWLValue: "$850,000 /-" },
-  { id: "8", ContactName: "Spjain", Status: "Open", Date: "26 June 2022", Phone: "null", PWLValue: "." },
+const rows = [
+  { id: 1, contactName: 'Jon Snow', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '$8000' },
+  { id: 2, contactName: 'Jon Snow 1', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 3, contactName: 'Jon Snow2', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 4, contactName: 'Jon Snow3', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 5, contactName: 'Jon Snow4', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 6, contactName: 'Jon Snow5', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '$5000' },
+  { id: 7, contactName: 'Jon Snow6', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 8, contactName: 'Jon Snow7', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 9, contactName: 'Jon Snow8', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 10, contactName: 'Jon Snow9', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 11, contactName: 'Jon Snow12', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '$9000' },
+  { id: 12, contactName: 'Jon Snow13', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 13, contactName: 'Jon Snow345', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 14, contactName: 'Jon Sno234w', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 15, contactName: 'Jon S123now', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 16, contactName: 'Jon 123Snow', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 17, contactName: 'Jon S453now', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '$2000' },
+  { id: 18, contactName: 'Jon Sno245w', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 19, contactName: 'Jon Sno89w', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
+  { id: 20, contactName: 'Jon Sno456w', status: 'open', phone: 9876543210, note: 'lorem ispum note for information', latestTask: 'task 1', dateOfCreation: '12 Sep 2022', pwlValue: '' },
 ];
 
 
 const Contacts = () => {
   return (
     <>
-      <DataTable columns={columns} rows={rowsData}
-        
+      <DataTable columns={columns} rows={rows}
+
       />
     </>
   );
