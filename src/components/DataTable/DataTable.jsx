@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
 
 
-const DataTable = ({ columns = [], rows = [] }) => {
+const DataTable = ({ columns = [], rows = [], ...restProps }) => {
   return (
     <Box sx={{
       height: '600px',
@@ -43,6 +43,9 @@ const DataTable = ({ columns = [], rows = [] }) => {
         checkboxSelection
         showCellRightBorder
         hideFooter
+
+
+        {...restProps}
       />
     </Box>
   );
