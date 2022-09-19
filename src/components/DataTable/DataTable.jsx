@@ -46,6 +46,7 @@ const DataTable = ({ columns = [], rows = [] }) => {
           getCellClassName={() => `custom-column`}
           checkboxSelection
           showCellRightBorder
+          hideFooter
         />
       </Box>
     </Box>
