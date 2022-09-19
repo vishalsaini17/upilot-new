@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AuthScreenLayout, DashboardLayout } from "../layouts";
-import { ForgotPassword, Home, SignIn, SignUp, SystemDesign } from "../pages";
+import { Contacts, ForgotPassword, Home, SignIn, SignUp, SystemDesign } from "../pages";
 
 const AppRoutes = () => {
   return (
@@ -9,6 +9,7 @@ const AppRoutes = () => {
         <Route path="/" element={<DashboardLayout />} >
           <Route index element={<Home />} />
           <Route path="system-design" element={<SystemDesign />} />
+          <Route path="contacts" element={<Contacts />} />
         </Route>
         <Route path="/" element={<AuthScreenLayout />} >
           <Route path="signin" element={<SignIn />} />

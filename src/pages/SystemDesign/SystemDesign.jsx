@@ -1,8 +1,6 @@
 import { Box, Button, Divider, Grid, Typography } from "@mui/material";
-import { DataGrid } from '@mui/x-data-grid';
 import { useThemeContext } from '../../configuration';
 import "./style.css";
-import { columns, rowsData } from "./table.option";
 
 
 
@@ -112,45 +110,6 @@ const SystemDesign = () => {
         <Grid item xs={12}> <Divider /> </Grid>
         <Grid item xs={12}> <Divider /> </Grid>
 
-        <Grid item xs={12} >
-
-          <Grid item xs={12}>
-          <Grid item md={6}>   <Grid item><Button variant="contained" color="primary">Add New Contact</Button></Grid></Grid>
-          <Grid item md={6}></Grid>
-        
-          </Grid>
-          
-       
-          <Box sx={{
-            height: '400px',
-            '& .bg-even': {
-              backgroundColor: 'rgba(225,223,246,0.15)',
-              boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              mb: '5px',
-              '&:hover': {
-                backgroundColor: 'rgba(225,223,246,0.34)',
-                boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              }
-            },
-
-            '& .bg-odd': {
-              backgroundColor: 'rgba(225,223,246,0.22)',
-              boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              mb: '5px',
-              '&:hover': {
-                backgroundColor: 'rgba(225,223,246,0.34)',
-                boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              }
-            }
-          }}>
-            <DataGrid columns={columns} rows={rowsData}
-              checkboxSelection
-              getRowClassName={({ indexRelativeToCurrentPage }) => indexRelativeToCurrentPage % 2 === 0 ? `bg-even` : 'bg-odd'}
-            />
-          </Box>
-        </Grid>
-
-        <Grid item xs={12}> <Divider /> </Grid>
 
       </Grid>
     </Box>

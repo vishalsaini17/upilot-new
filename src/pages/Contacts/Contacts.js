@@ -1,3 +1,5 @@
+import { DataTable } from "../../components";
+
 
 
 export const columns = [
@@ -24,3 +26,16 @@ export const rowsData = [
   { id: "7", ContactName: "Shibhu p", Status: "Open", Phone: "9867543467", Date: "22 June 2022", Value: "$25000/-", LatestDeaL: "Second Deal", PWLValue: "$850,000 /-" },
   { id: "8", ContactName: "Spjain", Status: "Open", Date: "26 June 2022", Phone: "null", PWLValue: "." },
 ];
+
+
+const Contacts = () => {
+  return (
+    <>
+      <DataTable columns={columns} rows={rowsData}
+        
+      />
+    </>
+  );
+}
+
+export default Contacts;
