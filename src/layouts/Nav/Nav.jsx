@@ -1,26 +1,12 @@
 
-import AddCircleRoundedIcon from '@mui/icons-material/AddCircleRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import ContactPageRoundedIcon from '@mui/icons-material/ContactPageRounded';
-import SimCardDownloadRoundedIcon from '@mui/icons-material/SimCardDownloadRounded';
+import { AddCircleRounded, CloseRounded, ContactPageRounded, SimCardDownloadRounded } from "@mui/icons-material";
+import { Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, styled, Toolbar, Typography, useTheme } from "@mui/material";
 import MuiAppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import { styled, useTheme } from '@mui/material/styles';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import * as React from 'react';
+import { useState } from "react";
 import img from "../../assets/img/brand_logo.png";
-import "./Nav.css";
 
+
+import "./Nav.css";
 const drawerWidth = 280 ,
  drawerHeight = 290
 
@@ -72,7 +58,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 export default function DrawerLeft() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   
 
   const handleDrawerOpen = () => {
@@ -96,13 +82,13 @@ export default function DrawerLeft() {
       <AppBar position="fixed" open={open}>
         <Toolbar >
           <div className='add-bg'>
-          <AddCircleRoundedIcon className='add-btn'
+          <AddCircleRounded className='add-btn'
             aria-label="open drawer"
             onClick={handleDrawerOpen}
             edge="start"
             sx={{ mr: 3, ...(open && { display: 'none' }) }}>
             
-          </AddCircleRoundedIcon>
+          </AddCircleRounded>
           </div>
          
           <Typography variant="h6" noWrap component="div">
@@ -142,7 +128,7 @@ export default function DrawerLeft() {
         <DrawerHeader sx={{justifyContent:"space-between"}}>
           <span> Add in UPilot:</span>
           <IconButton  sx={{color:"#ccc"}} onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <CloseRoundedIcon /> : <CloseRoundedIcon />}
+            {theme.direction === 'ltr' ? <CloseRounded /> : <CloseRounded />}
           </IconButton>
         </DrawerHeader>
         <Divider />
@@ -151,7 +137,7 @@ export default function DrawerLeft() {
             <ListItem key={text} disablePadding>
               <ListItemButton>
                 <ListItemIcon sx={{color:"#ccc"}}>
-                  {index % 2 === 0 ? <ContactPageRoundedIcon /> : <SimCardDownloadRoundedIcon />  }
+                  {index % 2 === 0 ? <ContactPageRounded /> : <SimCardDownloadRounded />  }
                 </ListItemIcon>
 
                 {/* <ListItemIcon sx={{color:"#ccc"}}>
