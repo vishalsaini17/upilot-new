@@ -1,11 +1,8 @@
-import SearchIcon from '@mui/icons-material/Search';
 import { Box, Button, Divider, Grid, Typography } from '@mui/material';
 import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
-import { DataGrid } from '@mui/x-data-grid';
 import { useThemeContext } from '../../configuration';
 import "./style.css";
-import { columns, rowsData } from "./table.option";
 
 
 
@@ -157,55 +154,6 @@ const SystemDesign = () => {
         <Grid item xs={12}> <Divider /> </Grid>
         <Grid item xs={12}> <Divider /> </Grid>
 
-        <Grid item xs={12} >
-
-          <Grid sx={{padding:"20px 0" , display:"flex" , justifyContent:"space-between"}} item xs={12} >
-          <Grid item xs={4} md={4}> <Grid item><Button variant="contained" color="primary">Add New Contact</Button></Grid></Grid>
-          <Grid item xs={4} md={2}> 
-           <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          </Grid>
-        
-          </Grid>
-          
-       
-          <Box sx={{
-            height: '400px',
-            '& .bg-even': {
-              backgroundColor: 'rgba(225,223,246,0.15)',
-              boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              mb: '5px',
-              '&:hover': {
-                backgroundColor: 'rgba(225,223,246,0.34)',
-                boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              }
-            },
-
-            '& .bg-odd': {
-              backgroundColor: 'rgba(225,223,246,0.22)',
-              boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              mb: '5px',
-              '&:hover': {
-                backgroundColor: 'rgba(225,223,246,0.34)',
-                boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
-              }
-            }
-          }}>
-            <DataGrid columns={columns} rows={rowsData}
-              checkboxSelection
-              getRowClassName={({ indexRelativeToCurrentPage }) => indexRelativeToCurrentPage % 2 === 0 ? `bg-even` : 'bg-odd'}
-            />
-          </Box>
-        </Grid>
-
-        <Grid item xs={12}> <Divider /> </Grid>
 
       </Grid>
     </Box>
