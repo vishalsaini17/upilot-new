@@ -1,4 +1,7 @@
-import { Box, Button, Divider, Grid, Typography } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
+import { Box, Button, Divider, Grid, Typography } from '@mui/material';
+import InputBase from '@mui/material/InputBase';
+import { alpha, styled } from '@mui/material/styles';
 import { DataGrid } from '@mui/x-data-grid';
 import { useThemeContext } from '../../configuration';
 import "./style.css";
@@ -6,8 +9,50 @@ import { columns, rowsData } from "./table.option";
 
 
 
+
 const SystemDesign = () => {
-  const { themeMode, toggleColorMode } = useThemeContext()
+  const { themeMode, toggleColorMode } = useThemeContext();
+  const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
+  }));
+  
+  const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }));
+  
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '12ch',
+        '&:focus': {
+          width: '20ch',
+        },
+      },
+    },
+  }));
 
   return (
     <Box sx={{ p: 5 }}>
@@ -114,9 +159,19 @@ const SystemDesign = () => {
 
         <Grid item xs={12} >
 
-          <Grid sx={{padding:"10px 0"}} item xs={12}>
-          <Grid item md={6}> <Grid item><Button variant="contained" color="primary">Add New Contact</Button></Grid></Grid>
-          <Grid item md={6}></Grid>
+          <Grid sx={{padding:"20px 0" , display:"flex" , justifyContent:"space-between"}} item xs={12} >
+          <Grid item xs={4} md={4}> <Grid item><Button variant="contained" color="primary">Add New Contact</Button></Grid></Grid>
+          <Grid item xs={4} md={2}> 
+           <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
+          </Grid>
         
           </Grid>
           
