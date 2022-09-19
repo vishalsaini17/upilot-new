@@ -1,5 +1,5 @@
 import { Box, Button, FormControl, Link, TextField, Typography } from "@mui/material";
-import CheckBox from "../../../layouts/CheckBox/CheckBox";
+import CheckBox from "../../../components/CheckBox/CheckBox";
 import "./SignIn.css";
 
 
