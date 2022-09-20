@@ -22,6 +22,11 @@ const ThemeConfig = ({ children }) => {
           }
         }
       },
+      MuiButtonBase: {
+        defaultProps: {
+          variant: 'contained'
+        }
+      },
       MuiButton: {
         styleOverrides: {
 

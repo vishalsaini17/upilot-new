@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import { GridFilterPanel } from "@mui/x-data-grid";
 import { DataTable, TableHeader } from "../../components";
 
 
@@ -97,10 +96,7 @@ const Contacts = () => {
   return (
     <Box>
       <TableHeader />
-      <GridFilterPanel />
-      <DataTable columns={columns} rows={rows}
-
-      />
+      <DataTable columns={columns} rows={rows} />
     </Box>
   );
 }

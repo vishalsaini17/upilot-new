@@ -40,9 +40,9 @@ const DataTable = ({ columns = [], rows = [], ...restProps }) => {
         rows={rows}
         getRowClassName={({ indexRelativeToCurrentPage }) => `custom-row ${indexRelativeToCurrentPage % 2 === 0 ? 'even-row' : 'odd-row'}`}
         getCellClassName={() => `custom-column`}
-        checkboxSelection
-        showCellRightBorder
-        hideFooter
+        // checkboxSelection
+        // showCellRightBorder
+        // hideFooter
 
 
         {...restProps}
