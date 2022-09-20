@@ -3,18 +3,19 @@ nav.nav-wrapper {
   background: rgba(0,0,0,0.2);
   position: relative;
   padding: 0px 25px; 
-  height: 50px;
+  // height: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  left: 0;
+  top: 0;
 }
 .nav-top{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  width: 100%;
-  top: 0;
   padding: 5px 30px;
-  z-index: 1;
-  left: 0;
+
 }
 .notification{
   display: flex;
