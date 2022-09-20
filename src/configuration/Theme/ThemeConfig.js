@@ -2,6 +2,7 @@ import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { createContext, useContext, useMemo, useState } from 'react';
 import body_bg from '../../assets/bg-img/body_bg.jpg';
 import body_shadow from '../../assets/bg-img/body_shadow.jpg';
+import { paletteColor } from './paletteColor';
 
 const ThemeContext = createContext({ toggleColorMode: () => { }, mode: 'light' | 'dark' });
 
@@ -20,26 +21,46 @@ const ThemeConfig = ({ children }) => {
             backgroundImage: themeMode === 'light' ? 'linear-gradient(to right, #F1F1F1 , #f8f9fa)' : `url(${body_shadow}), url(${body_bg})`
           }
         }
+      },
+      MuiButton: {
+        styleOverrides: {
+
+        },
+        variants: [
+          {
+            props: { variant: 'contained' },
+            style: {
+              textTransform: 'unset',
+              fontWeight: 500,
+            }
+          },
+          {
+            props: { variant: 'contained', size: 'large' },
+            style: {
+              fontSize: '15px',
+              height: '45px'
+            }
+          },
+          {
+            props: { variant: 'contained', color: 'primary' },
+            style: {
+              backgroundImage: `linear-gradient(to bottom, ${paletteColor.primary.light} 0%, ${paletteColor.primary.main} 100%)`,
+              '&:hover': {
+                backgroundImage: `linear-gradient(to bottom, ${paletteColor.primary.main} 0%, ${paletteColor.primary.dark} 100%)`,
+              }
+            }
+          },
+          
+        ],
+
       }
     },
     palette: {
       mode: themeMode,
-      primary: {
-        light: '#1AC6ED',
-        main: '#0071BF',
-        dark: '#000950',
-        // contrastText: string,
-      },
-      secondary: {
-        light: '#BFBAE2',
-        main: '#767299',
-        dark: '#000950',
-        // contrastText: string,
-      },
+      ...paletteColor,
       typography: {
         fontFamily: ['Roboto', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', '"Helvetica Neue"', 'Arial', 'sans-serif', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"'].join(','),
       },
-
     }
   }), [themeMode])
   // end custom theme styling

@@ -13,17 +13,17 @@ const SignIn = () => {
       <Box component={`form`} sx={{ mt: 4, width: "400px" }}>
 
 
-        <FormControl fullWidth sx={{ mb: 3 }} >
+        <FormControl fullWidth sx={{ mb: '10px' }} >
           <TextField type={`email`} placeholder="Email" />
 
         </FormControl>
-        <FormControl fullWidth sx={{ mb: 3 }}>
+        <FormControl fullWidth sx={{ mb: '10px' }}>
           <TextField type={`password`} placeholder="password" />
         </FormControl>
 
-        <CheckBox />
+        <CheckBox  />
         <Box>
-          <Button variant="contained" fullWidth>Submit</Button>
+          <Button variant="contained" size="large" fullWidth>SUBMIT</Button>
         </Box>
         <Link className='forget-pwd' sx={{ textDecoration: "none", textAlign: "center" }} to="/forgot-password"> <p > Forgot Your Password? </p></Link>
 

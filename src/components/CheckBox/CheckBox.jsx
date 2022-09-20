@@ -13,7 +13,7 @@ export default function IndeterminateCheckbox() {
 
   return (
     <FormGroup>
-      <FormControlLabel control={<Checkbox defaultChecked OnChange={handleChange} />} label="Remember Me" />
+      <FormControlLabel control={<Checkbox defaultChecked onChange={handleChange} />} label="Remember Me" />
 
     </FormGroup>
   );
