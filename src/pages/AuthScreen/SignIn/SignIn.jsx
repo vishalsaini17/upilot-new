@@ -10,7 +10,7 @@ const SignIn = () => {
 
       <Typography variant="h3" sx={{ textAlign: 'center' }}>Sign In</Typography>
 
-      <Box component={`form`} sx={{ mt: 4, width: "400px" }}>
+      <Box component={`form`} sx={{ mt: 4, maxWidth: "400px", mx: 'auto' }}>
 
 
         <FormControl fullWidth sx={{ mb: '10px' }} >
@@ -21,7 +21,7 @@ const SignIn = () => {
           <TextField type={`password`} placeholder="password" />
         </FormControl>
 
-        <CheckBox  />
+        <CheckBox />
         <Box>
           <Button variant="contained" size="large" fullWidth>SUBMIT</Button>
         </Box>

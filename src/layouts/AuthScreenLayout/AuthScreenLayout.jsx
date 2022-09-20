@@ -19,7 +19,7 @@ const AuthScreenLayout = () => {
       <Box component={`section`} sx={{ width: '100%', mt: [5, '6%', '5%', '4%', '3%'] }}>
         <Container>
           <Grid container justifyContent="center">
-            <Grid item xs={12} sm={6} md={5} lg={4} xl={3} >
+            <Grid item xs={12} sm={6} md={5}   >
               <Outlet />
             </Grid>
           </Grid>
