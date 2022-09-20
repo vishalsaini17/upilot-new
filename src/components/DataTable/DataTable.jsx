@@ -36,12 +36,12 @@ const DataTable = ({ columns = [], rows = [], ...restProps }) => {
     }}
     >
       <DataGrid
+        showCellRightBorder
         columns={columns}
         rows={rows}
         getRowClassName={({ indexRelativeToCurrentPage }) => `custom-row ${indexRelativeToCurrentPage % 2 === 0 ? 'even-row' : 'odd-row'}`}
         getCellClassName={() => `custom-column`}
-        // checkboxSelection
-        // showCellRightBorder
+        checkboxSelection
         // hideFooter
 
 

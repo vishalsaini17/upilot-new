@@ -1,8 +1,7 @@
-
 nav.nav-wrapper {
-  background: rgba(0,0,0,0.2);
+  background: rgba(0, 0, 0, 0.2);
   position: relative;
-  padding: 0px 25px; 
+  padding: 0px 25px;
   // height: 50px;
   position: fixed;
   width: 100%;
@@ -10,28 +9,30 @@ nav.nav-wrapper {
   left: 0;
   top: 0;
 }
-.nav-top{
+
+.nav-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 30px;
 
 }
-.notification{
+
+.notification {
   display: flex;
- justify-content: end;
+  justify-content: end;
 
 }
-.icon{
+
+.icon {
   color: #888 !important;
   cursor: pointer;
   padding: 0px 6px;
 }
 
-
-.add-btn{
+.add-btn {
   height: 38px !important;
   width: 80px !important;
   cursor: pointer;
-  color:  #3baad2!important;
+  color: #3baad2 !important;
 }
