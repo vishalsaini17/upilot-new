@@ -1,5 +1,5 @@
 import { Box, Button, FormControl, TextField, Typography } from "@mui/material";
-import "../SignIn/SignIn.css";
+import "../SignIn/signIn.scss";
 
 const SignUp = () => {
   return (

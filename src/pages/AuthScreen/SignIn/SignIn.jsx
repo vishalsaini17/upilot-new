@@ -1,6 +1,6 @@
 import { Box, Button, FormControl, Link, TextField, Typography } from "@mui/material";
 import CheckBox from "../../../components/CheckBox/CheckBox";
-import "./SignIn.scss";
+import "./signIn.scss";
 
 
 const SignIn = () => {
