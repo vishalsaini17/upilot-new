@@ -1,16 +1,13 @@
 import { Box, Button, FormControl, Link, TextField, Typography } from "@mui/material";
 import CheckBox from "../../../components/CheckBox/CheckBox";
-import "./SignIn.css";
-
-
-
+import "./SignIn.scss";
 
 
 const SignIn = () => {
-  
+
   return (
     <>
-  
+
       <Typography variant="h3" sx={{ textAlign: 'center' }}>Sign In</Typography>
 
       <Box component={`form`} sx={{ mt: 4, width: "400px" }}>
@@ -31,7 +28,6 @@ const SignIn = () => {
         <Link className='forget-pwd' sx={{ textDecoration: "none", textAlign: "center" }} to="/forgot-password"> <p > Forgot Your Password? </p></Link>
 
       </Box>
-
     </>
   );
 }

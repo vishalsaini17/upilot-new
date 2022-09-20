@@ -2,7 +2,7 @@ import { Box, Button, Divider, Grid, Typography } from '@mui/material';
 import InputBase from '@mui/material/InputBase';
 import { alpha, styled } from '@mui/material/styles';
 import { useThemeContext } from '../../configuration';
-import "./style.css";
+import "./style.scss";
 
 
 
