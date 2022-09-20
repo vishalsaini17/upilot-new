@@ -47,6 +47,15 @@ const ThemeConfig = ({ children }) => {
             }
           },
           {
+            props: { variant: 'contained', size: 'small' },
+            style: {
+              fontSize: '13px',
+              height: '32px',
+              padding:"0 15px"
+              
+            }
+          },
+          {
             props: { variant: 'contained', color: 'primary' },
             style: {
               backgroundImage: `linear-gradient(to bottom, ${paletteColor.primary.light} 0%, ${paletteColor.primary.main} 100%)`,

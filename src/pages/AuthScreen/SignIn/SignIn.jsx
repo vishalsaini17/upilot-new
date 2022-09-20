@@ -23,7 +23,7 @@ const SignIn = () => {
 
         <CheckBox />
         <Box>
-          <Button variant="contained" size="large" fullWidth>SUBMIT</Button>
+          <Button variant="contained" size="large" fullWidth >SUBMIT</Button>
         </Box>
         <Link className='forget-pwd' sx={{ textDecoration: "none", textAlign: "center" }} to="/forgot-password"> <p > Forgot Your Password? </p></Link>
 
