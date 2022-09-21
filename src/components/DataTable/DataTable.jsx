@@ -2,14 +2,13 @@ import { Box } from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
 
 
-const DataTable = ({ columns = [], rows = [], ...restProps }) => {
+const DataTable = ({ columns = [], rows = [], stickyColumnField = "", ...restProps }) => {
   return (
     <Box sx={{
       height: '600px',
       '& .custom-row': {
         boxShadow: '0 1px 4px 0 rgba(42,41,55,0.3)',
         mb: '5px',
-
         '& .custom-column': {
           borderTopColor: 'transparent'
         }
@@ -34,17 +33,19 @@ const DataTable = ({ columns = [], rows = [], ...restProps }) => {
         borderColor: 'transparent'
       }
     }}
+
     >
       <DataGrid
         showCellRightBorder
         columns={columns}
         rows={rows}
         getRowClassName={({ indexRelativeToCurrentPage }) => `custom-row ${indexRelativeToCurrentPage % 2 === 0 ? 'even-row' : 'odd-row'}`}
-        getCellClassName={() => `custom-column`}
+        getCellClassName={({ field }) => {
+          let stickyClass = stickyColumnField === field ? "column-sticky" : ""
+          return `custom-column ${stickyClass}`
+        }}
         checkboxSelection
         // hideFooter
-
-
         {...restProps}
       />
     </Box>

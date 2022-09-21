@@ -21,7 +21,7 @@ const TableHeader = () => {
   return (
     <Grid container columnSpacing={1} alignItems="center" sx={{ mb: 2 }}>
       <Grid item xs>
-        <Button variant="contained">Add new Contact</Button>
+        <Button variant="contained" size="small">Add new Contact</Button>
       </Grid>
       <Grid item>
         <TextField

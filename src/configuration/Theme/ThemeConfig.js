@@ -52,7 +52,6 @@ const ThemeConfig = ({ children }) => {
               fontSize: '13px',
               height: '32px',
               padding:"0 15px"
-              
             }
           },
           {
@@ -67,6 +66,16 @@ const ThemeConfig = ({ children }) => {
           
         ],
 
+      },
+      MuiTextField: {
+        variants: [
+          {
+            props: {size: 'small'},
+            style: {
+              
+            }
+          }
+        ]
       }
     },
     palette: {
