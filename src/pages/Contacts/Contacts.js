@@ -118,9 +118,11 @@ const rows = [
 
 const Contacts = () => {
   return (
-    <Box>
+    <Box onScroll={()=>{
+      debugger
+    }} >
       <TableHeader />
-      <DataTable columns={columns} rows={rows} />
+      <DataTable columns={columns} rows={rows}  stickyColumnField="contactName" />
     </Box>
   );
 }
