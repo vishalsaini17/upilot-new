@@ -17,10 +17,9 @@ const SignUp = () => {
         <FormControl fullWidth sx={{ mb: 3 }}>
           <TextField type={`password`} placeholder="Confirm Password" />
         </FormControl>
-
-       
+        
         <Box>
-          <Button variant="contained" fullWidth>Submit</Button>
+          <Button variant="contained" size="large" fullWidth>Submit</Button>
         </Box>
 
       </Box>
